@@ -12,44 +12,96 @@ h1 {
   font-size: 35px;
   color: black;
 }
-
-
 </style>
 
+<script>
+  function openSoundType(evt, TypeName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(TypeName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+
+
 <h1>Essex Sound Library</h1>
+<img src="sound.jpg" alt="Broken Link" width=100% height="85">
 
 <head>
   <title>Essex Sound Library</title>
   <link rel="icon" type="image/x-icon" href="EssexSoundLibrary_SX-04.ico">
 </head>
-  
+
+
 <body>
 
-<img src="sound.jpg" alt="Broken Link" width=100% height="85">
-
-
-
-<p>Essex Sound Library provides free foley and music for filmmakers. <br>
-Simple, elegant, and always free.</p> 
-<br>
-<br>
-<p>Sample Audio: <br><em>New Yorker sucking cock in stupid New York deli</p>
-
-<audio controls>
-<source src="New York scum.mp3">
-</audio>
-<lb> &nbsp &nbsp <a href="New York scum.mp3" download>Download</a>
-
-<br>
+<p>Essex Sound Library provides free foley, music, and sfx for filmmakers. <br>
+</p> 
 <br>
 <br>
 
-<em>New Yorker insulting man minding own business</p>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openSoundType(event, 'Foley')">Foley</button>
+  <button class="tablinks" onclick="openSoundType(event, 'Music')">Music</button>
+  <button class="tablinks" onclick="openSoundType(event, 'SFX')">SFX</button>
+</div>
 
-<audio controls>
-<source src="New Yorker Insults 1.mp3">
-</audio>
-<lb> &nbsp &nbsp <a href="New Yorker Insults 1.mp3" download>Download</a>
+<!-- Tab content -->
+ <!--FOLEY-->
+<div id="Foley" class="tabcontent">
+  
+  <p>Crickets at Night</p>
+  <audio controls>
+    <source src="night crickets quiet.mp3">
+    </audio>
+    <lb> &nbsp &nbsp <a href="night crickets quiet.mp3" download>Download</a>
+
+</div>
+
+ <!--MUSIC-->
+<div id="Music" class="tabcontent">
+
+  <p><em>Almost Together</em> music by <a href="https://open.spotify.com/artist/1QMxEJ8AGekjEVCimNgw4Z?si=wZsGNI9cTmGu2Cl1VwI86w" >Panther Boy</a></p>
+
+    <audio controls>
+    <source src="Almost Together music by Panther Boy.mp3">
+    </audio>
+    <lb> &nbsp &nbsp <a href="Almost Together music by Panther Boy.mp3" download>Download</a>
+
+</div>
+
+
+ <!--SCORE & SFX-->
+<div id="SFX" class="tabcontent">
+  <p>Teleporting</p>
+
+  <audio controls>
+    <source src="teleporting.mp3">
+    </audio>
+    <lb> &nbsp &nbsp <a href="teleporting.mp3" download>Download</a>
+
+
+</div>
+
+
+
+
+
 
 </body>
 </html>
